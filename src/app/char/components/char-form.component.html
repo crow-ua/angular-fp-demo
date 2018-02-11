@@ -1,0 +1,55 @@
+<form
+  [formGroup]="form"
+  (submit)="onSubmit($event)"
+  connectForm="char">
+  <mat-input-container>
+    <input
+      type="text"
+      matInput
+      placeholder="Name"
+      formControlName="name">
+  </mat-input-container>
+  <mat-form-field>
+    <mat-select
+      placeholder="Sex"
+      formControlName="sex">
+      <mat-option *ngFor="let v of sex" [value]="v">
+	{{ v }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select
+      placeholder="Race"
+      formControlName="race">
+      <mat-option *ngFor="let v of races" [value]="v">
+	{{ v }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select
+      placeholder="Alignment"
+      formControlName="alignment">
+      <mat-option *ngFor="let v of alignments" [value]="v">
+	{{ v }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div formGroupName="abilities">
+    <mat-input-container *ngFor="let a of abilities">
+      <input
+	type="number"
+	matInput
+	[placeholder]="a"
+	[formControlName]="a">
+    </mat-input-container>
+  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!form.valid"
+    type="submit">
+    Create!
+  </button>
+</form>

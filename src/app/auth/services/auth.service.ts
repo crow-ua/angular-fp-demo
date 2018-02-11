@@ -9,10 +9,6 @@ export class AuthService {
   constructor() {}
 
   login({ username, password }: Authenticate): Observable<User> {
-    /**
-     * Simulate a failed login to display the error
-     * message for the login form.
-     */
     if (username !== 'test') {
       return _throw('Invalid username or password');
     }
