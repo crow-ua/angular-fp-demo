@@ -1,7 +1,8 @@
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/filter';
 import { take } from 'rxjs/operators';
-import { Directive, EventEmitter, Input, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, Output,
+         OnInit, OnDestroy } from '@angular/core';
 import { FormGroupDirective } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
@@ -11,7 +12,8 @@ import { FORM, updateForm } from '../actions/char';
 @Directive({
   selector: '[connectForm]'
 })
-export class ConnectFormDirective {
+export class ConnectFormDirective implements OnInit, OnDestroy {
+  // tslint:disable-next-line
   @Input('connectForm') path: string;
   @Input() debounce = 300;
 

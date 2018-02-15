@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line
   selector: 'layout',
   template: `
     <mat-sidenav-container fullscreen>

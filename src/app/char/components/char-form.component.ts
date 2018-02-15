@@ -29,7 +29,7 @@ export class CharFormComponent implements OnInit {
       race: [null, req],
       alignment: [null, req],
       abilities: this.fb.group(
-	this.abilities.reduce((r, v) => ({...r, [v]: [18, req]}), {})
+        this.abilities.reduce((r, v) => ({...r, [v]: [18, req]}), {})
       )
     });
   }

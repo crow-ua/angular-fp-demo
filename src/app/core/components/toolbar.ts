@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line
   selector: 'toolbar',
   template: `
     <mat-toolbar color="primary">

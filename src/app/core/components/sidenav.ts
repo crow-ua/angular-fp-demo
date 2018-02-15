@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line
   selector: 'sidenav',
   template: `
     <mat-sidenav [opened]="open">

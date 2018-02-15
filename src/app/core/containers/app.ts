@@ -8,6 +8,7 @@ import { openSidenav, closeSidenav } from '../actions/layout';
 import * as Auth from '../../auth/actions/auth';
 
 @Component({
+  // tslint:disable-next-line
   selector: 'app',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
