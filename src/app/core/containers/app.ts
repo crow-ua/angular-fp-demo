@@ -38,13 +38,10 @@ import * as Auth from '../../auth/actions/auth';
   `,
 })
 export class AppComponent {
-  showSidenav$: Observable<boolean>;
-  loggedIn$: Observable<boolean>;
+  showSidenav$ = this.store.select(state => state.layout.showSidenav);
+  loggedIn$ = this.store.select(fromAuth.getLoggedIn);
 
-  constructor(private store: Store<fromRoot.State>) {
-    this.showSidenav$ = this.store.select(fromRoot.getShowSidenav);
-    this.loggedIn$ = this.store.select(fromAuth.getLoggedIn);
-  }
+  constructor(private store: Store<fromRoot.State>) {}
 
   closeSidenav() {
     this.store.dispatch(closeSidenav());

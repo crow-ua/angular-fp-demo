@@ -5,11 +5,12 @@ import {
   ActionReducer,
   MetaReducer,
 } from '@ngrx/store';
-import * as fromRouter from '@ngrx/router-store';
 import { localStorageSync } from 'ngrx-store-localstorage';
+import * as fromRouter from '@ngrx/router-store';
+
+import * as fromLayout from '../core/reducers/layout';
 import { environment } from '../../environments/environment';
 import { RouterStateUrl } from '../shared/utils';
-import * as fromLayout from '../core/reducers/layout';
 
 export interface State {
   layout: fromLayout.State;
@@ -29,9 +30,3 @@ export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionRedu
 }
 
 export const metaReducers: MetaReducer<State>[] = [localStorageSyncReducer];
-
-export const getLayoutState = createFeatureSelector<fromLayout.State>('layout');
-export const getShowSidenav = createSelector(
-  getLayoutState,
-  fromLayout.getShowSidenav
-);
